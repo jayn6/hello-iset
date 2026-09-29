@@ -70,24 +70,43 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-         child: Column(
-        
-          mainAxisAlignment: .center,
-          children: [
-            const Text('You have pushed the button this many times:'),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-          ],
+      child: Column(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      const CircleAvatar(
+        radius: 50,
+        backgroundColor: Color.fromARGB(255, 167, 197, 193),
+        child: Icon(
+          Icons.account_circle,
+          size: 50,
         ),
       ),
+
+      const SizedBox(height: 16),
+
+      const Text(
+        "Nouran ben sghaier",
+        style: TextStyle(
+          fontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+
+      const SizedBox(height: 8),
+        const Text('DSI  nourane006@gmail.com') ,
+              const SizedBox(height: 24), 
+              Text('Compteur: $_counter')
+    ],
+  ),
+),
+            
+      
       floatingActionButton: Row(
   mainAxisAlignment: MainAxisAlignment.center,
   children: [
     FloatingActionButton(
       onPressed: _decrementCounter,
-      tooltip: 'Decrease',
+      heroTag: 'Decrease',
       child: const Icon(Icons.remove),
     ),
 
@@ -95,7 +114,8 @@ class _MyHomePageState extends State<MyHomePage> {
 
     FloatingActionButton(
       onPressed: _resetCounter,
-      tooltip: 'Reset',
+      heroTag: 'reset',
+
       child: const Icon(Icons.refresh),
     ),
 
@@ -103,7 +123,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     FloatingActionButton(
       onPressed: _incrementCounter,
-      tooltip: 'Increment',
+      heroTag: 'inc',
       child: const Icon(Icons.add),
     ),
   ],
